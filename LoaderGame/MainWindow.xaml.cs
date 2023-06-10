@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using LoaderGame.Windows.Levels;
 namespace LoaderGame
 {
     /// <summary>
@@ -23,6 +23,10 @@ namespace LoaderGame
         public MainWindow()
         {
             InitializeComponent();
+            FirstLevel level = new FirstLevel();
+            level.Show();
+            Hide();
         }
+
     }
 }
