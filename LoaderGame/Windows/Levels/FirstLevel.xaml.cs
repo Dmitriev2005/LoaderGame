@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LoaderGame.Classes;
+using LoaderGame.Windows.General;
 
 namespace LoaderGame.Windows.Levels
 {
@@ -31,7 +32,7 @@ namespace LoaderGame.Windows.Levels
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             //Записываем в переменные ограничения, координаты
-            int maxPositionX = grField.ColumnDefinitions.Count-1;
+            int maxPositionX = grField.ColumnDefinitions.Count-2;
             int maxPositionY = grField.RowDefinitions.Count-1;
 
             int xPlayerPosition = Grid.GetColumn(sprPlayer);
@@ -142,6 +143,32 @@ namespace LoaderGame.Windows.Levels
             };
             brickBlocks = brickBlocksBuffer;
 
+        }
+
+        private void btnMenu_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnMenu.Background = new BrushConverter().ConvertFromString("#C7C7B5") as SolidColorBrush;
+        }
+
+        private void btnMenu_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnMenu.Background = new BrushConverter().ConvertFromString("#FFF5F5DC") as SolidColorBrush;
+        }
+
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Rectangle rectangle = new Rectangle();
+            rectangle.Fill = new BrushConverter().ConvertFromString("#7F000000") as SolidColorBrush;
+            grField.Children.Add(rectangle);
+
+            Grid.SetColumnSpan(rectangle, 7);
+            Grid.SetRowSpan(rectangle, 7);
+
+            DialogMenu dialogMenu = new DialogMenu();
+            dialogMenu.Owner = this;
+            dialogMenu.ShowDialog();
+
+            grField.Children.Remove(rectangle);
         }
     }
 }

@@ -11,6 +11,8 @@
     <None Remove="Resources\Back.png" />
     <None Remove="Resources\Box.png" />
     <None Remove="Resources\BrickBlock.png" />
+    <None Remove="Resources\Field.png" />
+    <None Remove="Resources\PanelBar.png" />
     <None Remove="Resources\Player.png" />
   </ItemGroup>
 
@@ -18,6 +20,8 @@
     <Resource Include="Resources\Back.png" />
     <Resource Include="Resources\Box.png" />
     <Resource Include="Resources\BrickBlock.png" />
+    <Resource Include="Resources\Field.png" />
+    <Resource Include="Resources\PanelBar.png" />
     <Resource Include="Resources\Player.png" />
   </ItemGroup>
 

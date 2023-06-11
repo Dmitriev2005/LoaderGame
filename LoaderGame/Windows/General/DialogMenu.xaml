@@ -1,0 +1,26 @@
+﻿<Window x:Class="LoaderGame.Windows.General.DialogMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoaderGame.Windows.General"
+        mc:Ignorable="d"
+        Title="Меню паузы" Height="300" Width="300" WindowStartupLocation="CenterOwner" >
+    <Grid Background="Bisque">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnContinue" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="100" Grid.Row="0" Content="Продолжить" Click="btnContinue_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
+        <Button x:Name="btnLevels" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="100" Grid.Row="1" Content="Уровни" Click="btnLevels_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
+        <Button x:Name="btnMenu" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="100" Grid.Row="2" Content="Меню" Click="btnMenu_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
+        <Button x:Name="btnExit" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="100" Grid.Row="3" Content="Выход" Click="btnExit_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
+    </Grid>
+</Window>
