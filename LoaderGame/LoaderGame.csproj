@@ -8,11 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Back.png" />
+    <None Remove="Resources\Box.png" />
     <None Remove="Resources\BrickBlock.png" />
     <None Remove="Resources\Player.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Back.png" />
+    <Resource Include="Resources\Box.png" />
     <Resource Include="Resources\BrickBlock.png" />
     <Resource Include="Resources\Player.png" />
   </ItemGroup>

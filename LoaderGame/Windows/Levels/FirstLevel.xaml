@@ -24,5 +24,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Image x:Name="sprPlayer" Grid.Row="0" Grid.Column="0" Source="/Resources/Player.png"/>
+        <Image x:Name="sprBox" Grid.Row="1" Grid.Column="1" Source="/Resources/Box.png"/>
+        <Image x:Name="sprTank" Grid.Row="5" Grid.Column="5" Source="/Resources/Back.png"/>
     </Grid>
 </Window>

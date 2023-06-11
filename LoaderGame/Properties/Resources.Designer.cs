@@ -63,6 +63,26 @@ namespace LoaderGame.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] Back {
+            get {
+                object obj = ResourceManager.GetObject("Back", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] Box {
+            get {
+                object obj = ResourceManager.GetObject("Box", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] BrickBlock {
             get {
                 object obj = ResourceManager.GetObject("BrickBlock", resourceCulture);
