@@ -8,21 +8,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\ArrowBack.png" />
     <None Remove="Resources\Back.png" />
     <None Remove="Resources\Box.png" />
     <None Remove="Resources\BrickBlock.png" />
     <None Remove="Resources\Field.png" />
+    <None Remove="Resources\FirstLevel.png" />
+    <None Remove="Resources\HowPlay.png" />
+    <None Remove="Resources\Logo.png" />
     <None Remove="Resources\PanelBar.png" />
     <None Remove="Resources\Player.png" />
+    <None Remove="Resources\SecondLevel.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\ArrowBack.png" />
     <Resource Include="Resources\Back.png" />
     <Resource Include="Resources\Box.png" />
     <Resource Include="Resources\BrickBlock.png" />
     <Resource Include="Resources\Field.png" />
+    <Resource Include="Resources\FirstLevel.png" />
+    <Resource Include="Resources\HowPlay.png" />
+    <Resource Include="Resources\Logo.png" />
     <Resource Include="Resources\PanelBar.png" />
     <Resource Include="Resources\Player.png" />
+    <Resource Include="Resources\SecondLevel.png" />
   </ItemGroup>
 
   <ItemGroup>

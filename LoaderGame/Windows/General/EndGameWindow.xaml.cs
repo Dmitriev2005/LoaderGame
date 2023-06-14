@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using LoaderGame.Windows.General;
-using LoaderGame.Windows.Levels;
-namespace LoaderGame
+
+namespace LoaderGame.Windows.General
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для EndGameWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EndGameWindow : Window
     {
-        public MainWindow()
+        public EndGameWindow()
         {
             InitializeComponent();
-            GeneralMenu  generalMenu = new GeneralMenu();
-            generalMenu.Show();
-            Hide();
         }
-
     }
 }

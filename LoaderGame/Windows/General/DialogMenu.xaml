@@ -18,9 +18,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnContinue" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="100" Grid.Row="0" Content="Продолжить" Click="btnContinue_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
-        <Button x:Name="btnLevels" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="100" Grid.Row="1" Content="Уровни" Click="btnLevels_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
-        <Button x:Name="btnMenu" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="100" Grid.Row="2" Content="Меню" Click="btnMenu_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
+        <Button x:Name="btnContinue" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="150" Grid.Row="0" Content="Продолжить" Click="btnContinue_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
+        <Button x:Name="btnLevels" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="150" Grid.Row="1" Content="Уровни" Click="btnLevels_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
+        <Button x:Name="btnMenu" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="150" Grid.Row="2" Content="Меню" Click="btnMenu_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
         <Button x:Name="btnExit" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="100" Grid.Row="3" Content="Выход" Click="btnExit_Click" MouseEnter="btnContinue_MouseEnter" MouseLeave="btnContinue_MouseLeave"/>
     </Grid>
 </Window>

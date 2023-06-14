@@ -31,95 +31,32 @@ namespace LoaderGame.Windows.Levels
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            //Записываем в переменные ограничения, координаты
-            int maxPositionX = grField.ColumnDefinitions.Count-2;
-            int maxPositionY = grField.RowDefinitions.Count-1;
-
-            int xPlayerPosition = Grid.GetColumn(sprPlayer);
-            int yPlayerPosition = Grid.GetRow(sprPlayer);
-
-            int xBoxPosition = Grid.GetColumn(sprBox);
-            int yBoxPosition = Grid.GetRow(sprBox);
-
-            int xTankPosition = Grid.GetColumn(sprTank);
-            int yTankPosition = Grid.GetRow(sprTank);
-
-            int xPlayerPositionInc = xPlayerPosition + 1;
-            int xPlayerPositionDec = xPlayerPosition - 1;
-            int yPlayerPositionInc = yPlayerPosition + 1;
-            int yPlayerPositionDec = yPlayerPosition - 1;
-
-            //Определяем что делаем, при нажатии определенной клавиши
-            switch (e.Key) {
-                case Key.Right:
-                    //Ограничение персонажа на границы поля и кирпичных стен
-                    if (xPlayerPositionInc <= maxPositionX && !brickBlocks.Where(q =>q.PositionX==xPlayerPositionInc && q.PositionY == yPlayerPosition).Any())
-                        //Ограничение коробки  на границы поля и кирпичные стены, кроме того проверяю есть ли в соседней клетки персонаж
-                        if(xPlayerPositionInc == xBoxPosition && yPlayerPosition == yBoxPosition&& 
-                            !brickBlocks.Where(q => q.PositionX==xBoxPosition + 1 && q.PositionY==yBoxPosition).Any()&&
-                            xBoxPosition + 1 <= maxPositionX) 
-                        {
-                            xBoxPosition += 1;
-                            Grid.SetColumn(sprPlayer, xPlayerPositionInc);
-                            Grid.SetColumn(sprBox, xBoxPosition);
-
-                        }
-                        else if(!(xPlayerPositionInc == xBoxPosition && yPlayerPosition == yBoxPosition))
-                            Grid.SetColumn(sprPlayer, xPlayerPositionInc);
-                    break;
-                case Key.Left:
-                    if (xPlayerPositionDec >= 0 && !brickBlocks.Where(q => q.PositionX == xPlayerPositionDec && q.PositionY == yPlayerPosition).Any())
-                        if (xPlayerPositionDec == xBoxPosition && yPlayerPosition == yBoxPosition && 
-                            !brickBlocks.Where(q => q.PositionX == xBoxPosition - 1 && q.PositionY == yBoxPosition).Any() &&
-                            xBoxPosition-1>=0)
-                        {
-                            xBoxPosition -= 1;
-                            Grid.SetColumn(sprPlayer, xPlayerPositionDec);
-                            Grid.SetColumn(sprBox, xBoxPosition);
-
-                        }
-                        else if (!(xPlayerPositionDec == xBoxPosition && yPlayerPosition == yBoxPosition))
-                            Grid.SetColumn(sprPlayer, xPlayerPositionDec);
-                    break;
-                case Key.Up:
-                    if (yPlayerPositionDec >= 0 && !brickBlocks.Where(q => q.PositionX == xPlayerPosition && q.PositionY == yPlayerPositionDec).Any())
-                        if (xPlayerPosition == xBoxPosition && yPlayerPositionDec == yBoxPosition &&
-                        !brickBlocks.Where(q => q.PositionX == xBoxPosition && q.PositionY == yBoxPosition-1).Any() &&
-                        yBoxPosition - 1 >= 0)
-                        {
-                            yBoxPosition -= 1;
-                            Grid.SetRow(sprPlayer, yPlayerPositionDec);
-                            Grid.SetRow(sprBox, yBoxPosition);
-
-                        }
-                    else if (!(xPlayerPosition == xBoxPosition && yPlayerPositionDec == yBoxPosition))
-                        Grid.SetRow(sprPlayer, yPlayerPositionDec);
-                    break;
-                case Key.Down:
-                    if (yPlayerPositionInc <= maxPositionY && !brickBlocks.Where(q => q.PositionX == xPlayerPosition && q.PositionY == yPlayerPositionInc).Any())
-                        if (xPlayerPosition == xBoxPosition && yPlayerPositionInc == yBoxPosition &&
-                            !brickBlocks.Where(q => q.PositionX == xBoxPosition && q.PositionY == yBoxPosition + 1).Any() &&
-                            yBoxPosition + 1 <= maxPositionY)
-                        {
-                            yBoxPosition += 1;
-                            Grid.SetRow(sprPlayer, yPlayerPositionInc);
-                            Grid.SetRow(sprBox, yBoxPosition);
-
-                        }
-                        else if (!(xPlayerPosition == xBoxPosition && yPlayerPositionInc == yBoxPosition))
-                            Grid.SetRow(sprPlayer, yPlayerPositionInc);
-
-                    break;
+            //Класс управления
+            PlayerControl playerControl = new PlayerControl();
+            if (playerControl.Controller(sprBox: sprBox, sprPlayer: sprPlayer, sprTank: sprTank, brickBlocks: brickBlocks, grField: grField, e: e))
+            {
+                _check = false;
+                SecondLevel secondLevel = new SecondLevel();
+                secondLevel.Owner = this;
+                secondLevel.Show();
+                secondLevel.Owner = null;
+                Close();
             }
-            //Провера на бак
-            if (xBoxPosition == xTankPosition && yBoxPosition == yTankPosition)
-                MessageBox.Show("Вы прошли уровень!");
 
         }
-
+        MessageBoxResult message;
+        bool _check = true;
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Application.Current.Shutdown();
+            if (!(OwnedWindows.Count > 0)&& _check)
+            {
+                message = MessageBox.Show("Вы хотите выйти?", "Потвердите действие", MessageBoxButton.OKCancel);
+                if (message == MessageBoxResult.OK)
+                    Application.Current.Shutdown();
+                else
+                    e.Cancel = true;
+
+            }
         }
         //Метод инициализатор, экземпляра класса 
         private void Draw()
@@ -137,7 +74,6 @@ namespace LoaderGame.Windows.Levels
                 new Position(1,0),
                 new Position(3,1),
                 new Position(1,2),
-                new Position(5,4),
                 new Position(2,4),
                 new Position(3,4)
             };

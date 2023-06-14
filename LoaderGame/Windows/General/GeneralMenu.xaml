@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoaderGame.Windows.General"
         mc:Ignorable="d"
-        Title="GeneralMenu" Height="450" Width="800">
-    <Grid>
-        
+        Title="Меню игры" Height="450" Width="800" Closing="Window_Closing" WindowStartupLocation="CenterOwner">
+    <Grid Background="Bisque">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Source="/Resources/Logo.png" Grid.ColumnSpan="3" Width="400" Height="80"  Grid.Row="0" />
+        <Image Source="/Resources/Player.png" Grid.Row="3"/>
+        <Image Source="/Resources/Box.png" Grid.Row="1" Grid.Column="2"/>
+        <Image Source="/Resources/Back.png" Grid.Row="4" Grid.Column="2"/>
+        <Image Source="/Resources/BrickBlock.png" Grid.Row="1" Grid.Column="0"/>
+        <Button x:Name="btnStart" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="200" Grid.Row="1" Content="Начать игру" Click="btnStart_Click" MouseEnter="btnStart_MouseEnter" MouseLeave="btnStart_MouseLeave"/>
+        <Button x:Name="btnLevels" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="200" Grid.Row="2" Content="Уровни" Click="btnLevels_Click" MouseEnter="btnStart_MouseEnter" MouseLeave="btnStart_MouseLeave"/>
+        <Button x:Name="btnHowPlay" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="200" Grid.Row="3" Content="Как играть?" Click="btnHowPlay_Click" MouseEnter="btnStart_MouseEnter" MouseLeave="btnStart_MouseLeave"/>
+        <Button x:Name="btnExit" Style="{StaticResource GameButton}" Grid.ColumnSpan="3" Width="100" Grid.Row="4" Content="Выход" Click="btnExit_Click" MouseEnter="btnStart_MouseEnter" MouseLeave="btnStart_MouseLeave"/>
+
     </Grid>
 </Window>

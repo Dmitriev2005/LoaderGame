@@ -63,6 +63,16 @@ namespace LoaderGame.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] ArrowBack {
+            get {
+                object obj = ResourceManager.GetObject("ArrowBack", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] Back {
             get {
                 object obj = ResourceManager.GetObject("Back", resourceCulture);
@@ -103,6 +113,36 @@ namespace LoaderGame.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] FirstLevel {
+            get {
+                object obj = ResourceManager.GetObject("FirstLevel", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] HowPlay {
+            get {
+                object obj = ResourceManager.GetObject("HowPlay", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] PanelBar {
             get {
                 object obj = ResourceManager.GetObject("PanelBar", resourceCulture);
@@ -116,6 +156,16 @@ namespace LoaderGame.Properties {
         internal static byte[] Player {
             get {
                 object obj = ResourceManager.GetObject("Player", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] SecondLevel {
+            get {
+                object obj = ResourceManager.GetObject("SecondLevel", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -31,7 +31,11 @@ namespace LoaderGame.Windows.General
 
         private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
-
+            GeneralMenu generalMenu = new GeneralMenu();
+            generalMenu.Owner = this.Owner;
+            generalMenu.Show();
+            generalMenu.Owner = null;
+            this.Owner.Close();
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
@@ -56,6 +60,11 @@ namespace LoaderGame.Windows.General
         private void btnLevels_Click(object sender, RoutedEventArgs e)
         {
 
+            LevelsWindow levelsWindow = new LevelsWindow();
+            levelsWindow.Owner = this.Owner;
+            levelsWindow.Show();
+            levelsWindow.Owner = null;
+            this.Owner.Close();
         }
     }
 }
