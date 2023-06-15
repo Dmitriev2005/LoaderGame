@@ -28,6 +28,7 @@ namespace LoaderGame.Windows.Levels
             ListInicialisator();
             Draw();
         }
+        private bool _check = true;
         private List<Position> brickBlocks;
         private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -60,7 +61,16 @@ namespace LoaderGame.Windows.Levels
         {
             PlayerControl playerControl = new PlayerControl();
             if (playerControl.Controller(sprBox: sprBox, sprPlayer: sprPlayer, sprTank: sprTank, brickBlocks: brickBlocks, grField: grField, e: e))
-                MessageBox.Show("Вы прошли уровень!");
+            {
+
+                _check = false;
+                ThirdLevel thirdLevel = new ThirdLevel();
+                thirdLevel.Owner = this;
+                thirdLevel.Show();
+                thirdLevel.Owner = null;
+                Close();
+
+            }
 
         }
         private void ListInicialisator()
@@ -86,7 +96,7 @@ namespace LoaderGame.Windows.Levels
         private MessageBoxResult message;
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (!(OwnedWindows.Count > 0))
+            if (!(OwnedWindows.Count > 0)&&_check)
             {
                 message = MessageBox.Show("Вы хотите выйти?", "Потвердите действие", MessageBoxButton.OKCancel);
                 if (message == MessageBoxResult.OK)

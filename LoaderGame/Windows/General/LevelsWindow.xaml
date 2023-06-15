@@ -23,12 +23,16 @@
         <Rectangle Fill="Transparent" x:Name="recLevelOne" Width="100" Height="90" Grid.Column="0" Grid.Row="0" MouseEnter="recLevelOne_MouseEnter" MouseLeave="recLevelOne_MouseLeave" MouseDown="recLevelOne_MouseDown"/>
         <Label Content="Первый уровень" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center"/>
 
-        <Image Source="/Resources/ArrowBack.png" x:Name="imgArrowBack" Grid.Row="3" MouseDown="imgArrowBack_MouseDown"/>
         
         <Image Source="/Resources/SecondLevel.png" Grid.Column="1" Grid.Row="0" Width="100" Height="90"/>
         <Rectangle Fill="Transparent" x:Name="recLevelTwo" Width="100" Height="90" Grid.Column="1" Grid.Row="0" MouseEnter="recLevelOne_MouseEnter" MouseLeave="recLevelOne_MouseLeave" MouseDown="recLevelOne_MouseDown"/>
-
-
         <Label Content="Второй уровень" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center"/>
+
+        <Image Source="/Resources/ThirdLevel.png" Grid.Column="2" Grid.Row="0" Width="100" Height="90"/>
+        <Rectangle Fill="Transparent" x:Name="recLevelThree" Width="100" Height="90" Grid.Column="2" Grid.Row="0" MouseEnter="recLevelOne_MouseEnter" MouseLeave="recLevelOne_MouseLeave" MouseDown="recLevelOne_MouseDown"/>
+        <Label Content="Третий уровень" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center"/>
+
+
+        <Image Source="/Resources/ArrowBack.png" x:Name="imgArrowBack" Grid.Row="3" MouseDown="imgArrowBack_MouseDown"/>
     </Grid>
 </Window>

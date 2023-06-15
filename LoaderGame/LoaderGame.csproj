@@ -5,6 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Иконка.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +20,11 @@
     <None Remove="Resources\PanelBar.png" />
     <None Remove="Resources\Player.png" />
     <None Remove="Resources\SecondLevel.png" />
+    <None Remove="Resources\ThirdLevel.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Иконка.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +39,7 @@
     <Resource Include="Resources\PanelBar.png" />
     <Resource Include="Resources\Player.png" />
     <Resource Include="Resources\SecondLevel.png" />
+    <Resource Include="Resources\ThirdLevel.png" />
   </ItemGroup>
 
   <ItemGroup>

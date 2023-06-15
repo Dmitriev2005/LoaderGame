@@ -82,6 +82,14 @@ namespace LoaderGame.Windows.General
                     secondLevel.Owner = null;
                     Close();
                     break;
+                case "recLevelThree":
+                    ThirdLevel thirdLevel = new ThirdLevel();
+                    thirdLevel.Owner = this;
+
+                    thirdLevel.Show();
+                    thirdLevel.Owner = null;
+                    Close();
+                    break;
                 default:
                     break;
             }

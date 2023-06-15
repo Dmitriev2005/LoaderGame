@@ -24,7 +24,7 @@ namespace LoaderGame
         public MainWindow()
         {
             InitializeComponent();
-            GeneralMenu  generalMenu = new GeneralMenu();
+            GeneralMenu generalMenu = new GeneralMenu();
             generalMenu.Show();
             Hide();
         }

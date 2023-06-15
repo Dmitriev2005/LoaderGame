@@ -169,5 +169,15 @@ namespace LoaderGame.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] ThirdLevel {
+            get {
+                object obj = ResourceManager.GetObject("ThirdLevel", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
