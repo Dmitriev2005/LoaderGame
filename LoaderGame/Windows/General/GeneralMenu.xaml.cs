@@ -71,9 +71,7 @@ namespace LoaderGame.Windows.General
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Вы хотите выйти?", "Потвердите действие", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
-                Application.Current.Shutdown();
-
+            Close();
         }
         MessageBoxResult message;
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
